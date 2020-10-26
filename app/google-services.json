@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "568574387315",
+    "firebase_url": "https://doctor-patient-booking.firebaseio.com",
+    "project_id": "doctor-patient-booking",
+    "storage_bucket": "doctor-patient-booking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568574387315:android:245d40034547c96ff3b606",
+        "android_client_info": {
+          "package_name": "com.kacimouaiss.doctorpatientbooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568574387315-5q6eivopka2uiokej4c5rbhjku9r7jit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoXuwKr8dtkLrV9AxyFkZwvE-Sa3qmBE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568574387315-5q6eivopka2uiokej4c5rbhjku9r7jit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
