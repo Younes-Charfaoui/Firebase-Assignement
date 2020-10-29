@@ -23,6 +23,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -33,6 +37,37 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+
+    // navigation component
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
+
+    // preference library.
+    implementation 'androidx.preference:preference:1.1.1'
+
+    //noinspection GradleDependency.
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // lottie library.
+    implementation "com.airbnb.android:lottie:3.4.1"
+
+    // pin view for phone code.
+    implementation 'com.chaos.view:pinview:1.4.3'
+
+    // awesome toasts
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+    // glide image loading
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    // logging library
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // changing the language of the apps
+    implementation "com.github.YarikSOffice:lingver:1.2.1"
 
     // firebase
     implementation platform('com.google.firebase:firebase-bom:25.12.0')
