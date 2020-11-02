@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/normal_view_margin"
-            android:text="@string/phone_verification_enter_code_sent_string"
+            android:text="Enter the code sent to your number"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -87,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/normal_view_margin"
-                    android:text="@string/phone_verification_not_receive_sms_string"
+                    android:text="You have not received an SMS?"
                     android:textAlignment="center"
                     android:textColor="@color/colorAccent"
                     android:textSize="18sp"
@@ -100,7 +100,7 @@
                     android:layout_margin="@dimen/normal_view_margin"
                     android:clickable="true"
                     android:focusable="true"
-                    android:text="@string/phone_verification_resend_sms_text"
+                    android:text="Send again"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold" />
@@ -141,7 +141,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="sans-serif-black"
-                            android:text="@string/phone_verification_validate_string"
+                            android:text="Validate"
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textColor="@android:color/white" />

@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/phone_verification_confirmation_login"
+        android:text="Your account has been verified successfully!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-black"
-                android:text="@string/phone_verification_done_string"
+                android:text="Start"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/white" />

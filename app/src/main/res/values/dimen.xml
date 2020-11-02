@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_horizontal_button_welcome">16dp</dimen>
+    <dimen name="welcome_buttons_height">64dp</dimen>
+    <dimen name="padding_root_node">16dp</dimen>
+    <dimen name="normal_view_margin">8dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">192dp</dimen>
+    <dimen name="radius_button_verification">32dp</dimen>
+    <dimen name="header_avatar_image_dimen">88dp</dimen>
+    <dimen name="padding_cards_cleaning_requests">8dp</dimen>
+    <dimen name="next_button_margins">32dp</dimen>
+    <dimen name="margin_order_layout">16dp</dimen>
+</resources>

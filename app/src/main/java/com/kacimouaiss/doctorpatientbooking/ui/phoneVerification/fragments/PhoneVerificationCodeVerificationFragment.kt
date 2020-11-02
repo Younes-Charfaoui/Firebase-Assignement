@@ -46,8 +46,8 @@ class PhoneVerificationCodeVerificationFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_phone_verification_confirm, container, false)
         val phone = arguments?.getString(KEY_PHONE)
-        val resendTextTimer = "getString(R.string.phone_verification_resend_sms_in)"
-        val resendSMSString = "getString(R.string.phone_verification_resend_sms_string)"
+        val resendTextTimer = "Resend SMS in:"
+        val resendSMSString = "Resend SMS"
 
         countDownTimer = object : CountDownTimer(60_000, 1000) {
             @SuppressLint("SetTextI18n")
@@ -66,18 +66,18 @@ class PhoneVerificationCodeVerificationFragment : Fragment() {
         view.sendAgainTextView.isClickable = false
 
         view.phoneNumberTextView.text =
-            phone ?: "getString(R.string.phone_verification_your_phone_number)"
+            phone ?: "Your Phone Number"
 
         view.codePinView.requestFocus()
 
         view.phoneCodeButton.setOnClickListener {
             if (!Utils.isNetworkConnected(requireContext())) {
-                requireContext().toastError("R.string.general_no_internet_message")
+                requireContext().toastError("No internet connection, try again later.")
                 return@setOnClickListener
             }
             val code = view.codePinView.text?.toString()
             if (code == null || code.isEmpty() || code.length != 6) {
-                requireContext().toastInfo("R.string.phone_verification_error_enter_valid_code")
+                requireContext().toastInfo("Please enter the full code")
                 return@setOnClickListener
             } else {
                 view.validateProgressBar.visibility = View.VISIBLE

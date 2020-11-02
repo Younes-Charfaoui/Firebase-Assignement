@@ -1,4 +1,4 @@
-package com.na9ili.na9ilipro.ui.phoneVerification
+package com.kacimouaiss.doctorpatientbooking.ui.phoneVerification
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -11,12 +11,15 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.kacimouaiss.doctorpatientbooking.R
+import com.kacimouaiss.doctorpatientbooking.ui.main.MainActivity
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationDoneFragment
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationDoneFragment.Companion.KEY_SIGN_UP
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationPhoneNumberFragment
 import com.kacimouaiss.doctorpatientbooking.utils.fragmentTransition
 import com.kacimouaiss.doctorpatientbooking.utils.toastError
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationCodeVerificationFragment
+import com.na9ili.na9ilipro.ui.phoneVerification.IPhoneVerificationListener
+import com.na9ili.na9ilipro.ui.phoneVerification.PhoneCallbacks
 import timber.log.Timber
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -46,7 +49,7 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
         setupDialog()
         phoneCallbacks = PhoneCallbacks(this)
 
-        supportActionBar?.title = "getString(R.string.welcome_login_title_button)"
+        supportActionBar?.title = "Connect"
         fragmentTransition(
             R.id.phoneVerificationContainer,
             PhoneVerificationPhoneNumberFragment()
@@ -70,7 +73,7 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
 
     override fun onVerificationFailed(exception: FirebaseException?) {
         Timber.d(exception, "Error Verification faild")
-        toastError("R.string.general_something_wrong")
+        toastError("Error Verification faild")
         finish()
     }
 
@@ -125,9 +128,7 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
 
     override fun onCompleteVerification() {
         Timber.d("InI")
-        setResult(RESULT_OK, Intent().apply {
-            putExtra(KEY_RESULT_VERIFICATION, true)
-        })
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 

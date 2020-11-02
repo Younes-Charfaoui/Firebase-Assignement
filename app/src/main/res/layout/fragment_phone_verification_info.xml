@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/normal_view_margin"
-            android:text="@string/phone_verification_tap_phone_number_string"
+            android:text="Enter your mobile number"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/normal_view_margin"
-            android:text="@string/phone_verification_header_text"
+            android:text="Please enter your mobile number to receive a verification code"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -66,7 +66,7 @@
                         android:id="@+id/phoneNumberEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/phone_verification_number_hint"
+                        android:hint="Phone Number"
                         android:inputType="number"
                         android:maxLength="10"
                         tools:ignore="Autofill,LabelFor" />
@@ -97,7 +97,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="sans-serif-black"
-                            android:text="@string/general_next_string"
+                            android:text="Next"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textAlignment="center"
                             android:textColor="@android:color/white"

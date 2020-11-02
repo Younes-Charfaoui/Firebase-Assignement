@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.kacimouaiss.doctorpatientbooking.R
 import com.kacimouaiss.doctorpatientbooking.firebase.RemoteConfigUtils
 import com.kacimouaiss.doctorpatientbooking.ui.main.MainActivity
-import com.na9ili.na9ilipro.ui.phoneVerification.PhoneVerificationActivity
+import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.PhoneVerificationActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import timber.log.Timber
 
