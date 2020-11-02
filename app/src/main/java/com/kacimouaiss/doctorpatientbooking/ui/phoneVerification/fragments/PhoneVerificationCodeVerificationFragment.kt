@@ -9,9 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.kacimouaiss.doctorpatientbooking.R
-import com.kacimouaiss.doctorpatientbooking.ui.utils.Utils
-import com.kacimouaiss.doctorpatientbooking.ui.utils.toastError
-import com.kacimouaiss.doctorpatientbooking.ui.utils.toastInfo
+import com.kacimouaiss.doctorpatientbooking.utils.Utils
+import com.kacimouaiss.doctorpatientbooking.utils.toastError
+import com.kacimouaiss.doctorpatientbooking.utils.toastInfo
 import com.na9ili.na9ilipro.ui.phoneVerification.IPhoneVerificationListener
 import kotlinx.android.synthetic.main.fragment_phone_verification_confirm.*
 import kotlinx.android.synthetic.main.fragment_phone_verification_confirm.view.*

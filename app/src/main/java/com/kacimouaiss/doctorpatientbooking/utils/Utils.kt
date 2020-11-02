@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking.ui.utils
+package com.kacimouaiss.doctorpatientbooking.utils
 
 import android.app.Activity
 import android.content.Context

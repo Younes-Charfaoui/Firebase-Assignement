@@ -14,8 +14,8 @@ import com.kacimouaiss.doctorpatientbooking.R
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationDoneFragment
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationDoneFragment.Companion.KEY_SIGN_UP
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationPhoneNumberFragment
-import com.kacimouaiss.doctorpatientbooking.ui.utils.fragmentTransition
-import com.kacimouaiss.doctorpatientbooking.ui.utils.toastError
+import com.kacimouaiss.doctorpatientbooking.utils.fragmentTransition
+import com.kacimouaiss.doctorpatientbooking.utils.toastError
 import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationCodeVerificationFragment
 import timber.log.Timber
 import java.util.*
@@ -45,9 +45,6 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
 
         setupDialog()
         phoneCallbacks = PhoneCallbacks(this)
-
-        val phoneNumber = intent.getStringExtra(KEY_PHONE_NUMBER)
-
 
         supportActionBar?.title = "getString(R.string.welcome_login_title_button)"
         fragmentTransition(

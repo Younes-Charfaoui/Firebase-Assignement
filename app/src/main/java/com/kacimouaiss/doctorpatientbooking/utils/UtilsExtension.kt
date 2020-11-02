@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.kacimouaiss.doctorpatientbooking.ui.utils
+package com.kacimouaiss.doctorpatientbooking.utils
 
 import android.content.Context
 import android.text.Selection
