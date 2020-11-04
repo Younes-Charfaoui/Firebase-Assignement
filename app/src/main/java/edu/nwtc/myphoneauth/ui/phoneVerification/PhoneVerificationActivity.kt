@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking.ui.phoneVerification
+package edu.nwtc.myphoneauth.ui.phoneVerification
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -10,16 +10,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import com.kacimouaiss.doctorpatientbooking.R
-import com.kacimouaiss.doctorpatientbooking.ui.main.MainActivity
-import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationDoneFragment
-import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationDoneFragment.Companion.KEY_SIGN_UP
-import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationPhoneNumberFragment
-import com.kacimouaiss.doctorpatientbooking.utils.fragmentTransition
-import com.kacimouaiss.doctorpatientbooking.utils.toastError
-import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments.PhoneVerificationCodeVerificationFragment
-import com.na9ili.na9ilipro.ui.phoneVerification.IPhoneVerificationListener
+import edu.nwtc.myphoneauth.ui.main.MainActivity
+import edu.nwtc.myphoneauth.ui.phoneVerification.fragments.PhoneVerificationDoneFragment
+import edu.nwtc.myphoneauth.ui.phoneVerification.fragments.PhoneVerificationPhoneNumberFragment
+import edu.nwtc.myphoneauth.utils.fragmentTransition
+import edu.nwtc.myphoneauth.utils.toastError
+import edu.nwtc.myphoneauth.ui.phoneVerification.fragments.PhoneVerificationCodeVerificationFragment
 import com.na9ili.na9ilipro.ui.phoneVerification.PhoneCallbacks
+import edu.nwtc.myphoneauth.R
 import timber.log.Timber
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -28,15 +26,8 @@ import java.util.concurrent.TimeUnit
 class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallbacksListener,
     IPhoneVerificationListener {
 
-    companion object {
-        const val KEY_PHONE_NUMBER = "KEY_PHONE_NUMBER"
-        const val KEY_RESULT_VERIFICATION = "KEY_RESULT_VERIFICATION"
-        const val KEY_ERROR_TYPE = "KEY_ERROR_TYPE"
-        const val KEY_ERROR_ALREADY_EXIST = 1154
-    }
-
     private lateinit var firebaseAuthInstance: FirebaseAuth
-    private lateinit var maidPhoneNumber: String
+    private lateinit var mPhoneNumber: String
     private var storedVerificationId: String? = null
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var phoneCallbacks: PhoneCallbacks
@@ -49,12 +40,11 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
         setupDialog()
         phoneCallbacks = PhoneCallbacks(this)
 
-        supportActionBar?.title = "Connect"
+        supportActionBar?.title = "Login"
         fragmentTransition(
             R.id.phoneVerificationContainer,
             PhoneVerificationPhoneNumberFragment()
         )
-
 
         firebaseAuthInstance = FirebaseAuth.getInstance()
         firebaseAuthInstance.setLanguageCode(Locale.getDefault().language)
@@ -62,11 +52,9 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
 
     override fun onVerificationCompleted(credential: PhoneAuthCredential?) {
         if (credential != null) {
-            Timber.d("Crediential was n't null, Im here")
             signInWithPhoneAuthCredential(credential)
         } else {
-            Timber.d("Crediential was nukk Im here Too")
-            toastError("R.string.general_something_wrong")
+            toastError("Something went wrong")
             finish()
         }
     }
@@ -97,17 +85,17 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
         firebaseAuthInstance.signInWithCredential(credential).addOnSuccessListener {
             fragmentTransition(
                 R.id.phoneVerificationContainer,
-                PhoneVerificationDoneFragment.newInstance(KEY_SIGN_UP)
+                PhoneVerificationDoneFragment()
             )
         }.addOnFailureListener {
             if (it is FirebaseAuthInvalidCredentialsException) {
-                toastError("getString(R.string.phone_verification_code_incorrect)")
+                toastError("phone_verification_code_incorrect")
                 val fragment =
                     supportFragmentManager.findFragmentById(R.id.phoneVerificationContainer)
                             as PhoneVerificationCodeVerificationFragment
                 fragment.showValidateButton()
             } else {
-                toastError("R.string.general_something_wrong")
+                toastError("general_something_wrong")
                 finish()
             }
         }
@@ -117,7 +105,7 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
     override fun onSendAgainTaped() {
         PhoneAuthProvider.getInstance()
             .verifyPhoneNumber(
-                maidPhoneNumber,
+                mPhoneNumber,
                 60,
                 TimeUnit.SECONDS,
                 this,
@@ -137,15 +125,14 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
             val credential = PhoneAuthProvider.getCredential(storedVerificationId!!, code)
             signInWithPhoneAuthCredential(credential)
         } else {
-            toastError("getString(R.string.general_something_wrong)")
+            toastError("Something wrong")
             finish()
         }
     }
 
     override fun onPhoneNumberStageCompleted(phoneNumber: String) {
-        //val formattedPhone = /*"+1$phoneNumber"*/"+213${phoneNumber.substring(1)}"
         Timber.d("onPhoneNumberStageCompleted : $phoneNumber")
-        this.maidPhoneNumber = phoneNumber
+        this.mPhoneNumber = phoneNumber
         sendSmsAndConfirm(phoneNumber)
     }
 
@@ -160,6 +147,6 @@ class PhoneVerificationActivity : AppCompatActivity(), PhoneCallbacks.PhoneCallb
 
     private fun setupDialog() {
         dialog = ProgressDialog(this)
-        dialog.setMessage("getString(R.string.general_connecting_please_wait_string)")
+        dialog.setMessage("Connecting please wait.")
     }
 }

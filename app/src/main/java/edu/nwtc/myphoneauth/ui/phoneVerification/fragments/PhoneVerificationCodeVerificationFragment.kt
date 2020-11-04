@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments
+package edu.nwtc.myphoneauth.ui.phoneVerification.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,15 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.kacimouaiss.doctorpatientbooking.R
-import com.kacimouaiss.doctorpatientbooking.utils.Utils
-import com.kacimouaiss.doctorpatientbooking.utils.toastError
-import com.kacimouaiss.doctorpatientbooking.utils.toastInfo
-import com.na9ili.na9ilipro.ui.phoneVerification.IPhoneVerificationListener
+import edu.nwtc.myphoneauth.R
+import edu.nwtc.myphoneauth.utils.Utils
+import edu.nwtc.myphoneauth.utils.toastError
+import edu.nwtc.myphoneauth.utils.toastInfo
+import edu.nwtc.myphoneauth.ui.phoneVerification.IPhoneVerificationListener
 import kotlinx.android.synthetic.main.fragment_phone_verification_confirm.*
 import kotlinx.android.synthetic.main.fragment_phone_verification_confirm.view.*
-import kotlinx.android.synthetic.main.fragment_phone_verification_confirm.view.phoneCodeButton
-import kotlinx.android.synthetic.main.fragment_phone_verification_confirm.view.validateProgressBar
 
 
 class PhoneVerificationCodeVerificationFragment : Fragment() {

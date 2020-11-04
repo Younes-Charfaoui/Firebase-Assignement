@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking.ui.splash
+package edu.nwtc.myphoneauth.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,12 +8,10 @@ import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.kacimouaiss.doctorpatientbooking.R
-import com.kacimouaiss.doctorpatientbooking.firebase.RemoteConfigUtils
-import com.kacimouaiss.doctorpatientbooking.ui.main.MainActivity
-import com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.PhoneVerificationActivity
+import edu.nwtc.myphoneauth.R
+import edu.nwtc.myphoneauth.ui.main.MainActivity
+import edu.nwtc.myphoneauth.ui.phoneVerification.PhoneVerificationActivity
 import kotlinx.android.synthetic.main.activity_splash.*
-import timber.log.Timber
 
 
 class SplashActivity : AppCompatActivity() {
@@ -25,12 +23,10 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        Glide.with(this).load(R.drawable.ic_launcher_background).into(nakiliLogo)
+        Glide.with(this).load(R.drawable.ic_baseline_person_24).into(nakiliLogo)
 
         FirebaseApp.initializeApp(this)
         firebaseAuth = FirebaseAuth.getInstance()
-        splashTime = RemoteConfigUtils.getSplashTime()
-        Timber.d("onCreate : $splashTime")
 
         splashTime()
     }

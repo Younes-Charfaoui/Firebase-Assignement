@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking
+package edu.nwtc.myphoneauth
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

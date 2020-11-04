@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "568574387315",
-    "firebase_url": "https://doctor-patient-booking.firebaseio.com",
-    "project_id": "doctor-patient-booking",
-    "storage_bucket": "doctor-patient-booking.appspot.com"
+    "project_number": "628127556524",
+    "firebase_url": "https://fir-asignment-175f8.firebaseio.com",
+    "project_id": "fir-asignment-175f8",
+    "storage_bucket": "fir-asignment-175f8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:568574387315:android:245d40034547c96ff3b606",
+        "mobilesdk_app_id": "1:628127556524:android:f17f03978a7a06669b9009",
         "android_client_info": {
-          "package_name": "com.kacimouaiss.doctorpatientbooking"
+          "package_name": "edu.nwtc.myphoneauth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "568574387315-5q6eivopka2uiokej4c5rbhjku9r7jit.apps.googleusercontent.com",
+          "client_id": "628127556524-83lf4qkm4iehmpq14nknf9j2ptj0rmhv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.nwtc.myphoneauth",
+            "certificate_hash": "761b27db306cfdaed64981a7eebec70e063e82cb"
+          }
+        },
+        {
+          "client_id": "628127556524-r59s76ivmr2g1jeh9vhobn6j5n68d027.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAoXuwKr8dtkLrV9AxyFkZwvE-Sa3qmBE8"
+          "current_key": "AIzaSyCCrSq3UknN_tm43Fr81wUBn2a5z51Gw4A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "568574387315-5q6eivopka2uiokej4c5rbhjku9r7jit.apps.googleusercontent.com",
+              "client_id": "628127556524-r59s76ivmr2g1jeh9vhobn6j5n68d027.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

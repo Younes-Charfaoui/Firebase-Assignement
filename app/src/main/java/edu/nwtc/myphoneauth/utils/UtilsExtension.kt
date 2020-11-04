@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.kacimouaiss.doctorpatientbooking.utils
+package edu.nwtc.myphoneauth.utils
 
 import android.content.Context
 import android.text.Selection

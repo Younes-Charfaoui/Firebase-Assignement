@@ -1,8 +1,8 @@
-package com.kacimouaiss.doctorpatientbooking.ui.main
+package edu.nwtc.myphoneauth.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kacimouaiss.doctorpatientbooking.R
+import androidx.appcompat.app.AppCompatActivity
+import edu.nwtc.myphoneauth.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.na9ili.na9ilipro.ui.phoneVerification
+package edu.nwtc.myphoneauth.ui.phoneVerification
 
 interface IPhoneVerificationListener {
 

@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking.ui.phoneVerification.fragments
+package edu.nwtc.myphoneauth.ui.phoneVerification.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.kacimouaiss.doctorpatientbooking.R
-import com.kacimouaiss.doctorpatientbooking.utils.Utils
-import com.kacimouaiss.doctorpatientbooking.utils.toastError
-import com.na9ili.na9ilipro.ui.phoneVerification.IPhoneVerificationListener
+import edu.nwtc.myphoneauth.R
+import edu.nwtc.myphoneauth.ui.phoneVerification.IPhoneVerificationListener
+import edu.nwtc.myphoneauth.utils.Utils
+import edu.nwtc.myphoneauth.utils.toastError
 import kotlinx.android.synthetic.main.fragment_phone_verification_info.view.*
 
 
@@ -36,7 +36,7 @@ class PhoneVerificationPhoneNumberFragment : Fragment() {
             }
             val phoneNumber = view.phoneNumberEditText.text.toString().trim()
             if (!isValidFullNumber(phoneNumber)) {
-                view.phoneNumberEditTextLayout.error = "getString(R.string.phone_verification_error_number_phone)"
+                view.phoneNumberEditTextLayout.error = "phone_verification_error_number_phone"
                 return@setOnClickListener
             } else {
                 view.phoneNumberEditTextLayout.error = null
@@ -46,15 +46,13 @@ class PhoneVerificationPhoneNumberFragment : Fragment() {
             view.phoneEnterNextButton.visibility = View.GONE
 
             Utils.hideKeyboardFrom(requireContext(), view.phoneEnterLayout)
-            listener.onPhoneNumberStageCompleted(/*"+1$phoneNumber"*/"+213${phoneNumber.substring(1)}")
+            listener.onPhoneNumberStageCompleted("+1$phoneNumber")
         }
 
         return view
     }
 
     private fun isValidFullNumber(phoneNumber: String): Boolean {
-        if (phoneNumber.isEmpty() || phoneNumber.length != 10 || phoneNumber[0] != '0')
-            return false
         return true
     }
 }

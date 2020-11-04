@@ -1,11 +1,10 @@
-package com.kacimouaiss.doctorpatientbooking.utils
+package edu.nwtc.myphoneauth.utils
 
 import android.app.Application
-import com.kacimouaiss.doctorpatientbooking.BuildConfig
+import edu.nwtc.myphoneauth.BuildConfig
 import com.yariksoffice.lingver.Lingver
 import timber.log.Timber
 
-@Suppress("unused")
 class ApplicationController : Application() {
 
     override fun onCreate() {

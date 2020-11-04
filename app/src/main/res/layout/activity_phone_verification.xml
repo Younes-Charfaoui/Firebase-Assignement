@@ -5,5 +5,5 @@
     android:layout_height="match_parent"
     android:id="@+id/phoneVerificationContainer"
     android:fillViewport="true"
-    tools:context=".ui.phoneVerification.PhoneVerificationActivity"
+    tools:context="edu.nwtc.myphoneauth.ui.phoneVerification.PhoneVerificationActivity"
     tools:ignore="MergeRootFrame" />

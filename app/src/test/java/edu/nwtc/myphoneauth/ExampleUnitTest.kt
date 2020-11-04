@@ -1,4 +1,4 @@
-package com.kacimouaiss.doctorpatientbooking
+package edu.nwtc.myphoneauth
 
 import org.junit.Test
 
